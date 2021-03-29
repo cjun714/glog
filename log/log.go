@@ -31,7 +31,8 @@ func E(m ...interface{}) {
 
 // F log fatal message
 func F(m ...interface{}) {
-	zlog.WithLevel(zerolog.FatalLevel).Msg(toString(m...))
+	zlog.Fatal().Msg(toString(m...)) // will call os.Exit(1)
+	// zlog.WithLevel(zerolog.FatalLevel).Msg(toString(m...))
 }
 
 // I log info message
